@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slang Translator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Slang Translator</h1>
+            <p class="subtitle">Understand local slang from around the world</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="navigation">
+            <button class="nav-btn active" data-view="search">Search</button>
+            <button class="nav-btn" data-view="browse">Browse</button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Search View -->
+            <section id="search-view" class="view active">
+                <!-- Search Bar Component -->
+                <div class="search-bar-container">
+                    <div class="search-bar">
+                        <input 
+                            type="text" 
+                            id="search-input" 
+                            class="search-input" 
+                            placeholder="Search for a slang term..."
+                            aria-label="Search for slang terms"
+                        >
+                        <button id="search-btn" class="search-btn" aria-label="Search">
+                            <span>Search</span>
+                        </button>
+                        <button id="clear-btn" class="clear-btn" aria-label="Clear search">
+                            <span>Clear</span>
+                        </button>
+                    </div>
+                    <div id="search-error" class="error-message" style="display: none;"></div>
+                </div>
+
+                <!-- Results Display Area -->
+                <div id="results-container" class="results-container">
+                    <div id="results-list" class="results-list"></div>
+                    <div id="no-results" class="no-results" style="display: none;">
+                        <p>No slang terms found. Try browsing all terms or refine your search.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Browse View -->
+            <section id="browse-view" class="view">
+                <!-- Browse List Container -->
+                <div class="browse-container">
+                    <div class="browse-header">
+                        <h2>Browse All Terms</h2>
+                        <div class="term-count">
+                            <span id="term-count-display">Loading...</span>
+                        </div>
+                    </div>
+
+                    <!-- Browse List -->
+                    <div id="browse-list" class="browse-list"></div>
+
+                    <!-- Pagination Controls -->
+                    <div class="pagination-controls">
+                        <button id="prev-btn" class="pagination-btn" aria-label="Previous page">
+                            Previous
+                        </button>
+                        <div class="page-info">
+                            <span id="page-display">Page 1</span>
+                        </div>
+                        <button id="next-btn" class="pagination-btn" aria-label="Next page">
+                            Next
+                        </button>
+                    </div>
+
+                    <div id="browse-error" class="error-message" style="display: none;"></div>
+                </div>
+            </section>
+
+            <!-- Term Detail View -->
+            <section id="term-detail-view" class="view">
+                <div class="term-detail-container">
+                    <button id="back-btn" class="back-btn" aria-label="Go back">
+                        ← Back
+                    </button>
+                    <div id="term-detail" class="term-detail"></div>
+                    <div id="term-error" class="error-message" style="display: none;"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Slang Translator. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
